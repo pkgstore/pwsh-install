@@ -59,7 +59,7 @@ function Install-PowerShell() {
 
     [ValidateSet('msi', 'zip')]
     [Alias('T')]
-    [string]${Type} = 'zip'
+    [string]${Type} = 'zip',
 
     [ValidateRange(0,1)]
     [Alias('OPS')]
