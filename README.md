@@ -1,4 +1,4 @@
-# PowerShell Install Module
+# PowerShell "Install" Module
 
 PowerShell module for installing PowerShell from GitHub.
 
