@@ -17,24 +17,31 @@ function Install-PowerShell() {
     .PARAMETER MSIOpenPS
       Property controls the option for adding the 'Open PowerShell' item to the context menu in Windows Explorer.
       Default: '0'.
+      Alias: '-OPS'.
     .PARAMETER MSIRunPS
       Property controls the option for adding the 'Run with PowerShell' item to the context menu in Windows Explorer.
       Default: '0'.
+      Alias: '-RPS'.
     .PARAMETER MSIPSRemoting
       Property controls the option for enabling PowerShell remoting during installation.
       Default: '1'.
+      Alias: '-PSR'.
     .PARAMETER MSIManifest
       Property controls the option for registering the Windows Event Logging manifest.
       Default: '1'.
+      Alias: '-PSM'.
     .PARAMETER MSIMUUse
       Updating through Microsoft Update, WSUS, or Configuration Manager.
       Default: '1'.
+      Alias: '-MUU'.
     .PARAMETER MSIMUEnable
       Using Microsoft Update for Automatic Updates.
       Default: '1'.
+      Alias: '-MUE'.
     .PARAMETER MSIPath
       Property controls the option for adding PowerShell to the Windows PATH environment variable.
       Default: '1'.
+      Alias: '-PSP'.
 
     .EXAMPLE
       Install-PowerShell -V '7.2.8' -T 'zip'
