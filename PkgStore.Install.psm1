@@ -102,21 +102,21 @@ function Install-PowerShell() {
   ${D_PWSH} = "${D_APPS}\PowerShell"
   ${F_PWSH} = "PowerShell-${Version}-win-x64.${Type}"
 
-  Write-Information -MessageData "Create directory: '${D_APPS}'..." -InformationAction "Continue"
+  Write-Msg -T 'I' -M "Create directory: '${D_APPS}'..."
   New-Item -Path "${D_APPS}" -ItemType "Directory" -Force | Out-Null
 
-  Write-Information -MessageData "Download PowerShell: '${F_PWSH}'..." -InformationAction "Continue"
+  Write-Msg -T 'I' -M "Download PowerShell: '${F_PWSH}'..."
   Invoke-WebRequest "${URL_DL}/v${Version}/${F_PWSH}" -OutFile "${D_APPS}\${F_PWSH}"
 
   if ( "${Type}" -eq 'zip' ) {
     if ( Test-Path -Path "${D_PWSH}" ) { Remove-Item -Path "${D_PWSH}" -Recurse -Force }
-    Write-Information -MessageData "Expand: '${F_PWSH}'" -InformationAction "Continue"
+    Write-Msg -T 'I' -M "Expand: '${F_PWSH}'"
     Expand-Archive -Path "${D_APPS}\${F_PWSH}" -DestinationPath "${D_PWSH}"
     Remove-Item -Path "${D_APPS}\${F_PWSH}";
   } elseif ( "${Type}" -eq 'msi' ) {
-    Write-Information -MessageData "Install: '${F_PWSH}'" -InformationAction "Continue"
+    Write-Msg -T 'I' -M "Install: '${F_PWSH}'"
     msiexec.exe /package "${D_APPS}\${F_PWSH}" /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=${MSIOpenPS} ADD_FILE_CONTEXT_MENU_RUNPOWERSHELL=${MSIRunPS} ENABLE_PSREMOTING=${MSIPSRemoting} REGISTER_MANIFEST=${MSIManifest} USE_MU=${MSIMUUse} ENABLE_MU=${MSIMUEnable} ADD_PATH=${MSIPath}
   } else {
-    Write-Error -Message "Package type not found!" -ErrorAction "Stop"
+    Write-Msg -T 'E' -M "Package type not found!" -A 'Stop'
   }
 }
