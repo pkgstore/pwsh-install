@@ -1,7 +1,7 @@
 @{
   RootModule = 'PkgStore.Install.psm1'
   ModuleVersion = '1.0.0'
-  GUID = ''
+  GUID = '78d6af89-e15c-4f0d-834e-05df4f51fa97'
   Author = 'Kitsune Solar'
   CompanyName = 'v77 Development'
   Copyright = '(c) 2023 v77 Development. All rights reserved.'
