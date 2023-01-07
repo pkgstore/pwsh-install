@@ -1,7 +1,7 @@
 function Install-PowerShell() {
   <#
     .SYNOPSIS
-      Download and install PowerShell.
+      Downloading and installing PowerShell.
 
     .DESCRIPTION
 
