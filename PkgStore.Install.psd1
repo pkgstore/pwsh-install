@@ -7,7 +7,13 @@
   Copyright = '(c) 2023 v77 Development. All rights reserved.'
   Description = 'PowerShell module for installing PowerShell from GitHub.'
   PowerShellVersion = '7.1'
+  RequiredModules = @('PkgStore.Kernel')
   FunctionsToExport = @('Install-PowerShell')
-  CmdletsToExport = @()
-  AliasesToExport = @()
+  PrivateData = @{
+    PSData = @{
+      Tags = @('pwsh', 'install')
+      LicenseUri = 'https://github.com/pkgstore/pwsh-install/blob/main/LICENSE'
+      ProjectUri = 'https://github.com/pkgstore/pwsh-install'
+    }
+  }
 }
